@@ -23,3 +23,8 @@ if(true){
 //console.log(a) results in an error because of the block scope
 console.log(c) //does not result in an error hence avoid var also  accPassword changes to "848" which should be "123848"
 console.log(i)//gives 1 not 2 because i will have 2 only in if block
+
+/*
+Falsy values : false , 0 , -0, BigInt, "", null, undefined, NaN
+Truthy values: "0", 'false', " ", [], {}, function(){}
+*/

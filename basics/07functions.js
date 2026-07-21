@@ -89,7 +89,7 @@ essenceOfThis()
 // }
 // addingTwo()
 
-/*
+/* Used in REACT more often
 For single line operations 
  If { } are used after the arrow then return is mandatory otherwise no return needed under ()
 */

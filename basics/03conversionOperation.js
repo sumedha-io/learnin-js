@@ -37,3 +37,11 @@ console.log(+"");//0
 //Comaprison === strictly checks datatype
 console.log("2"==2);
 console.log("2"===2);
+
+// Nullish Coalescing Operator (??) : null undefined
+let v1 ;
+// v1= 5 ?? 10 ; output:5
+// v1= null ?? 10 ; output:10
+// v1= undefined ?? 10 ; output:10
+// v1= null ?? 10 ?? 20 ; output:10 (first number encountered)
+console.log(v1)

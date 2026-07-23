@@ -23,3 +23,12 @@
 
     - html collection has to be converted to array
       <img width="1573" height="806" alt="image" src="https://github.com/user-attachments/assets/6b06109e-404d-4925-a89b-76dabe1f2816" />
+
+      
+# Javascript
+- Synchronous: each line of code is executed one by one in order
+- Single threaded: hence slower than other languages
+## Blocking v/s Non Blocking code
+   - Blocking Code : Blocks the flow of program , synchronous reading of file
+   - Non Blocking Code : Does not block execution , asynchronous reading of file
+<img width="832" height="533" alt="image" src="https://github.com/user-attachments/assets/f2c451fa-1e53-4c31-805f-b885d21ba9a0" />

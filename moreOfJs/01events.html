@@ -21,7 +21,86 @@
    //Writing onClick as an attribute in the button tag is better in react not in pure js 
    //instead of on click in script event listeners help in propagation give better features
 
-  //document.getElementById('owl').onclick = function(){alert("owl clicked")}
-  
+    //document.getElementById('owl').onclick = function(){alert("owl clicked")}
+
+    //attachEvent()    
+    //jQuery-on
+
+    //document.getElementById('owl').addEventListener('click',function(){},false) it has the third argument as false by default
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e);
+        
+    // })
+
+    //type(mouse or keyboard events) ,timestamp, preventDefault
+    //target, toElement, srcElement(source element ), currentTarget
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode(of the keys on the keyboard)
+
+    //EVENT PROPAGATION
+
+    //OBSERVATION: If owl is clicked it obviously means that images is clicked
+
+    //Bubbling: inside to outside (bottom-top)
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // },false)
+
+    //Capturing mode: outside to inside (top-down)
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // },true)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // },true)
+    
+    //To PREVENT Propagation
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // },false)
+    
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     console.log("google clicked");  //If google is clicked image is also clicked
+    //     e.stopPropagation()
+    // })
+
+    //Task: To remove images when clicked 
+
+    //Making use of e.target that gives the html tag clicked
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+                console.log(e.target);
+            //console.log(e.target.outerHTML);
+            //e.target.outerHTML=''
+
+            //img is enclosed in the li which is parent of img that should also be removed
+
+            console.log(e.target.parentNode);
+            let removeLi =e.target.parentNode
+
+            removeLi.remove()
+
+            //document.querySelector('#images').removeChild(removeLi)
+
+            //removeLi.parentNode.removeChild(removeLi)//equivalent to the previous step
+        }
+        
+    })
+
+
 </script>
 </html>

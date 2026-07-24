@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Coding</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        // setTimeout(function(){
+        //     console.log("Sume");
+        // },2000)
+
+        //setTimeout performs a function after a given span of time in milliseconds to prevent that clearTimeout is used
+        //function refernce is passed (handler)
+
+        // const heyName = function(){
+        //     console.log("Sume");
+        // }
+        // //setTimeout(heyName,2000)
+
+        // const changeText = function(){
+        //     document.querySelector('h1').innerHTML = "Code for fun"
+        // }
+
+        // const changeH = setTimeout(changeText, 4000)
+
+        // document.querySelector('#stop').addEventListener('click', function(){
+        //     clearTimeout(changeH)
+        //     console.log("STOPPED");
+        // })
+
+        //setInterval
+
+        const sayDate = function (str) {
+            console.log(str, Date.now().toString());
+        }
+
+        let intervalId = null
+        document.getElementById("start").addEventListener('click', function () {
+
+            if (!intervalId) { //prevents multiple intervals from running at the same time
+                intervalId = setInterval(sayDate, 1000, "hi")
+                stopInterval(intervalId)
+            }
+        })
+
+        function stopInterval(intervalId) {
+            document.getElementById('stop').addEventListener('click', () => { clearInterval(intervalId) })
+        }
+
+
+    </script>
+</body>
+
+</html>
